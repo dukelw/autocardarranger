@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width initial-scale=1.0">
+  <link rel="icon" href="./img/skystriker.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="./cardArranger.css">
+  <title>Sắp xếp ảnh</title>
+  <style>
+    /* html {
+      width: 210mm;
+      height: 297mm;
+    }
+    body {
+      padding: 0;
+      margin: 0;
+      width: 210mm;
+      height: 297mm;
+    } */
+    .image-container {
+      display: flex;
+      flex-wrap: wrap;
+      /* width: 210mm;
+      height: 297mm; */
+      justify-content: space-evenly;
+    }
+  
+    .image-container img {
+      width: 6.55cm;
+      height: 9.5cm;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <h1 class="center hide">Auto Card Arranger</h1>
+    <div class="container">
+      <div class="nameWrapper hide o-1 mt-16">
+        <label class="title" for="nameFile p-4">Nhập tên file</label>
+        <input id="nameFile" class="p-4" type="text" text="">
+      </div>
+      <p class="hide title o-2">Chọn ảnh với số lượng tùy biến</p>
+      <div class="inputOptionWrapper o-3">
+        <input class="inputOptionBtn btn-primary" id="uploadOptionInput" type="file">
+        <span>
+          Số lượng
+          <input class="inputNumberOfCardBtn p-4" type="number" min="1" value="1">
+          <button class="sortOptionBtn btn-primary p-4 w-100" onclick="sortImagesOption()">Sắp xếp</button>
+        </span>
+      </div>
+      <p class="hide title o-4">Chọn ảnh với số lượng nhiều</p>
+      <div class="inputOptionWrapper o-5">
+        <input class="inputBtn btn-primary" type="file" id="uploadInput" multiple>
+        <button class="sortBtn btn-primary p-4 w-100" onclick="sortImages()">Sắp xếp</button>
+      </div>
+      <div class="deleteWrapper mt-16 hide o-6">
+        <span class="title">
+          Chọn tất cả bài
+          <input type="checkbox" class="checkAllBtn">
+        </span>
+        <button class="deleteBtn btn-primary p-4" onclick="deleteCard()">Xóa</button>
+      </div>
+    </div>
+
+  
+    <div class="image-container" id="imageContainer"></div>
+  </div>
+  <script src="cardArranger.js"></script>
+</body>
+</html>
